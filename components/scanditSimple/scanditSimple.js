@@ -34,6 +34,9 @@ const ScanditSimple = (props) => {
     const [details, setDetails] = useState(props.details);
     const { scanCount, setScanCount } = useGlobalContext();
 
+    // Attempting to fix barcodes scanning too fast
+    // Also global state affects all products, not singular product
+
     const iterateScan = (barcode) => {
 
         if ( parseInt(barcode._data) === parseInt(details.GTIN) ) {
